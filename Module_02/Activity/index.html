@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Module 02 Activity</title>
+  <style>
+    h3 {font-family: "Arial Black", Gadget, sans-serif;}
+    p {font-family: sans-serif;}
+  </style>
+</head>
+<body>
+  <h3>This program will calculate the sum of two given integers:</h3>
+  <p id="sum"></p>
+  <h3>This program will multiply the two given integers: </h3>
+  <p id="mult"></p>
+  <h3>This program will triple the sum of the two given integers:</h3>
+  <p id="trip"></p>
+  <script>
+    var intOne = 8;
+    var intTWo = 10;
+    var intSum = intOne + intTWo;
+    var intMult = intOne * intTWo;
+    var intTrip = 3 * intSum;
+
+    document.getElementById('sum').innerHTML = "The sum of the integers is " + intSum;
+    document.getElementById('mult').innerHTML = "The value of the multiplied integers is " + intMult;
+    document.getElementById('trip').innerHTML = "The triple value of the two integer's sum is " + intTrip;
+
+    console.log("The sum of the integers is " + intSum);
+    console.log("The value of the multiplied integers is " + intMult);
+    console.log("The triple value of the two integer's sum is " + intTrip);
+  </script>
+</body>
+</html>
