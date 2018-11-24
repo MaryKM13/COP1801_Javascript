@@ -4,15 +4,17 @@
 <meta charset=utf-8 />
 <title> Module 03 Activity - JavaScript Function and String Reversal</title>
 <style>
-  h2 {
-    color: #2a637a;
-    text-align: center;
-    font-family: "Courier New", Courier, monospace;
-  }
+  h2    { color: #2a637a;
+          text-align: center; }
+  body  { text-align: center;
+          font-family: "Courier New", Courier, monospace;
+          font-weight: bold;}
 </style>
 </head>
 <body>
 <h2>Mary Mickelson Module 03 Activity</h2>
+<p id="num"></p>
+<p id="str"></p>
 <script>
   function reverseString(str) {
       // The .split method puts each letter into an array
@@ -27,10 +29,13 @@
       //Return the value
       return joinArray;
   }
-  var num = 9035768
+  var num = 9035768;
   //The number has to be converted to a string for the function to work
   console.log(reverseString(num.toString()));
-  console.log(reverseString("My Cat Is Cool"));
+  var words = "My Cat Is Cool";
+  console.log(reverseString(words));
+  document.getElementById("num").innerHTML = reverseString(num.toString());
+  document.getElementById("str").innerHTML = reverseString(words);
 </script>
 </body>
 </html>
