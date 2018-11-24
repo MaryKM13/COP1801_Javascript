@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title> Module 03 Activity - JavaScript Function and String Reversal</title>
+<style>
+  h2 {
+    color: #2a637a;
+    text-align: center;
+    font-family: "Courier New", Courier, monospace;
+  }
+</style>
+</head>
+<body>
+<h2>Mary Mickelson Module 03 Activity</h2>
+<script>
+  function reverseString(str) {
+      // The .split method puts each letter into an array
+      var splitString = str.split("");
+
+      // The .reverse method switches the letters back to front
+      var reverseArray = splitString.reverse();
+
+      // The .join method puts all the letters back to one word
+      var joinArray = reverseArray.join("");
+
+      //Return the value
+      return joinArray;
+  }
+  var num = 9035768
+  //The number has to be converted to a string for the function to work
+  console.log(reverseString(num.toString()));
+  console.log(reverseString("My Cat Is Cool"));
+</script>
+</body>
+</html>
