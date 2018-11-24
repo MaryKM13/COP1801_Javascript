@@ -30,10 +30,11 @@
       return joinArray;
   }
   var num = 9035768;
+  var words = "My Cat Is Cool";
   //The number has to be converted to a string for the function to work
   console.log(reverseString(num.toString()));
-  var words = "My Cat Is Cool";
   console.log(reverseString(words));
+  
   document.getElementById("num").innerHTML = reverseString(num.toString());
   document.getElementById("str").innerHTML = reverseString(words);
 </script>
