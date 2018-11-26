@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title> Module 03 Activity - JavaScript Function and String Reversal</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="themes/Module03CP.min.css" />
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style>
+  h2    { color: #2a637a;
+          text-align: center; }
+  body  { text-align: center;
+          font-family: "Courier New", Courier, monospace;
+          font-weight: bold;}
+</style>
+</head>
+<body>
+<h2>Mary Mickelson Module 03 Course Project</h2>
+
+  <h3>Please enter the text you'd like displayed below:</h3>
+  <input id="userInput" style="width: 300px;"><br>
+  <button id="dis">Display My Text</button><br><br>
+<div id="showText">
+</div>
+<script>
+  function inputDisplay() {
+    var userText = document.getElementById('userInput').value;
+    var displayText = "Here is your text: " + userText;
+    document.getElementById('showText').innerHTML = displayText;
+  }
+  document.getElementById('dis').addEventListener('click', inputDisplay);
+</script>
+</body>
+</html>
