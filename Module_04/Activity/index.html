@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Module 04 Activity</title>
+    <style media="screen">
+      body {  text-align: center;
+              font-family: "Arial Black", Gadget, sans-serif;
+              background-color: #F5FFFA;}
+    </style>
+  </head>
+  <body>
+    <h3> Module 04 Activity - Writing Conditional Statements</h3>
+    <p>The sorted list of three items:</p>
+    <p id="mod4"></p>
+    <script>
+      var array = ["Tremors", "Buckaroo Banzai", "Legally Blonde"];
+      a = array[0];
+      b = array[1];
+      c = array[2];
+      if (a < b && a < c && b < c) {
+          result = [a, b, c];
+      }
+      else if (a < b && a < c && c < b) {
+        result = [a, c, b];
+      }
+      else if (b < a && b < c && a < c) {
+          result = [b, a, c];
+      }
+      else if (b < a && b < c && c < a) {
+          result = [b, c, a];
+      }
+      else if (c < a && c < b && a < b) {
+          result = [c, a, b];
+      }
+      else {
+          result = [c, b, a];
+      }
+      var list = "";
+      var x;
+      for (x in result) {
+        list += result[x] + "<br>";
+      }
+      console.log(result);
+      document.getElementById("mod4").innerHTML = list;
+    </script>
+
+  </body>
+</html>
