@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title> Module 04 Course Project - Adding Interactivity</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="themes/Module03CP.min.css" />
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<style>
+  h2    { color: #2a637a;
+          text-align: center; }
+  body  { text-align: center;
+          font-family: "Courier New", Courier, monospace;
+          font-weight: bold;}
+  #favRed { color: #e70303; font-weight: bold;}
+  #favBlue {color: #3d7ff3; font-weight: bold;}
+  #favGreen {color: #0bcd10; font-weight: bold;}
+  #favOrange {color: #f9800c; font-weight: bold;}
+</style>
+</head>
+<body>
+<h2>Mary Mickelson Module 04 Course Project</h2>
+  <h3>Please enter the text you'd like displayed below:</h3>
+  <input id="userInput" style="width: 300px;"><br>
+  <button id="dis">Display My Text</button><br><br>
+  <div id="showText"><br>
+</div>
+  <h3>Pick Your Favorite Of These Colors: Red, Blue, Green, or Orange</h3>
+  <input id="favColor" style="width: 300px;"><br>
+  <button id="col">My Favorite Color</button><br><br>
+  <div id="favRed"><br></div>
+  <div id="favBlue"><br></div>
+  <div id="favGreen"><br></div>
+  <div id="favOrange"><br></div>
+  <div id="not"></div>
+
+  </div>
+<script>
+  function inputDisplay() {
+    var userText = document.getElementById('userInput').value;
+    var displayText = "Here is your text: " + userText;
+    document.getElementById('showText').innerHTML = displayText;
+  }
+  function colorDisplay() {
+    var userColor = document.getElementById('favColor').value;
+    var colorFav = userColor.toUpperCase();
+    var displayCol = "Your Favorite Color Is: " + colorFav;
+    if (colorFav == "RED") {
+      document.getElementById("favRed").innerHTML = displayCol;
+    } else if (colorFav == "BLUE") {
+      document.getElementById("favBlue").innerHTML = displayCol;
+    } else if (colorFav == "GREEN") {
+      document.getElementById("favGreen").innerHTML = displayCol;
+    } else if (colorFav == "ORANGE") {
+      document.getElementById("favOrange").innerHTML = displayCol;
+    } else {
+      document.getElementById("not").innerHTML = "Please enter one of the color choices above.";
+      location.reload(forceget);
+    }
+  }
+  document.getElementById('dis').addEventListener('click', inputDisplay);
+  document.getElementById('col').addEventListener('click', colorDisplay);
+
+
+</script>
+</body>
+</html>
