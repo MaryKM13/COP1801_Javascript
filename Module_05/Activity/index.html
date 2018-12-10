@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Module 05 Activity</title>
+    <style>
+      h1 {  text-align: center; }
+      body {  font-family: "Lucida Console", Monaco, monospace;
+              background-color: #c2d6d6;}
+      #mod5form { margin: 0 auto;
+                  width: 600px;}
+      #ras {margin: 0 auto;
+            width: 600px;}
+    </style>
+  </head>
+  <body>
+    <h1>Module 05 Activity</h1>
+    <h1>Writing Functions to Get Values from a Form</h1><br>
+    <div id="mod5form" style="width: 600px; ">
+      <form id="mod5">
+        First Name: <input type="text" name="fname" value=""><br><br>
+        Last Name: <input type="text" name="lname" value=""><br><br>
+        Address: <input type="text" name="address" value=""><br><br>
+        City: <input type="text" name="city" value=""><br><br>
+        State: <input type="text" name="state" value=""><br><br>
+        <input type="button" onclick="myFunction()" value="Submit"/>
+      </form>
+    </div>
+    <hr>
+    <p id="ras" style="width: 600px;"></p>
+    <script type="text/javascript">
+      function myFunction() {
+        var i;
+        var y =[];
+        for (i = 0; i < mod5.elements.length-1; i++) {
+              var x = document.getElementById("mod5").elements[i].value;
+              y.push(x);
+              console.log(x);
+            }
+        var mod5Form = y.join("<br>")
+        document.getElementById("ras").innerHTML = mod5Form;
+      }
+    </script>
+  </body>
+</html>

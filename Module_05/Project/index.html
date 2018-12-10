@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset=utf-8 />
+<title> Module 05 Course Project - Adding Forms and Storing Values</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="themes/Module03CP.min.css" />
+
+<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+    $(document).bind('mobileinit',function(){
+        $.mobile.loadingMessage = false;
+    })
+</script>
+<style>
+  .ui-loader {  display: none !important;}
+  h2    { color: #2a637a;
+          text-align: center; }
+  body  { text-align: center;
+          font-family: "Courier New", Courier, monospace;
+          font-weight: bold;
+          width: 750px;
+          margin: 0 auto;}
+table, th, td { border: 1px solid black;
+                border-collapse: collapse; }
+th, td {  padding: 15px;
+          text-align: left; }
+  #mod5form {margin: 0 auto;}
+  #mod5table {margin: 0 auto;}
+  #favRed { color: #e70303; font-weight: bold;}
+  #favBlue {color: #3d7ff3; font-weight: bold;}
+  #favGreen {color: #0bcd10; font-weight: bold;}
+  #favOrange {color: #f9800c; font-weight: bold;}
+</style>
+</head>
+<body>
+<h2>Mary Mickelson Module 05 Course Project</h2>
+  <h3>Please enter the text you'd like displayed below:</h3>
+  <input id="userInput" style="width: 300px;"><br>
+  <button id="dis">Display My Text</button><br><br>
+  <div id="showText"><br>
+</div>
+<hr>
+  <h3>Pick Your Favorite Of These Colors: Red, Blue, Green, or Orange</h3>
+  <input id="favColor" style="width: 300px;"><br>
+  <button id="col">My Favorite Color</button><br><br>
+  <div id="favRed"><br></div>
+  <div id="favBlue"><br></div>
+  <div id="favGreen"><br></div>
+  <div id="favOrange"><br></div>
+  <div id="not"></div><br>
+</div>
+<hr>
+<div id="mod5form" style="width: 600px; ">
+  <form id="mod5" action="Submit">
+    First Name: <input type="text" name="fname" value=""><br>
+    Last Name: <input type="text" name="lname" value=""><br>
+    Address: <input type="text" name="address" value=""><br>
+    City: <input type="text" name="city" value=""><br>
+    State: <input type="text" name="state" value=""><br>
+    <button id="inp">Show My Information</button><br><br>
+  </form>
+</div>
+<hr>
+<div id="mod5table" style="width: 750px;">
+<table id="rasCP" style="width: 100%;">
+  <caption>User Input</caption>
+  <tr>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Address</th>
+    <th>City</th>
+    <th>State</th>
+  </tr>
+  <tr>
+    <td id="fname"></td>
+    <td id="lname"></td>
+    <td id="address"></td>
+    <td id="city"></td>
+    <td id="state"></td>
+  </tr>
+</table><br>
+</div>
+<script>
+  function inputDisplay() {
+    var userText = document.getElementById('userInput').value;
+    var displayText = "Here is your text: " + userText;
+    document.getElementById('showText').innerHTML = displayText;
+  }
+  function colorDisplay() {
+    var userColor = document.getElementById('favColor').value;
+    var colorFav = userColor.toUpperCase();
+    var displayCol = "Your Favorite Color Is: " + colorFav;
+    if (colorFav == "RED") {
+      document.getElementById("favRed").innerHTML = displayCol;
+    } else if (colorFav == "BLUE") {
+      document.getElementById("favBlue").innerHTML = displayCol;
+    } else if (colorFav == "GREEN") {
+      document.getElementById("favGreen").innerHTML = displayCol;
+    } else if (colorFav == "ORANGE") {
+      document.getElementById("favOrange").innerHTML = displayCol;
+    } else {
+      document.getElementById("not").innerHTML = "Please enter a valid color";
+    }
+  }
+  function mod5CP() {
+    var i;
+    var y =[];
+    for (i = 0; i < mod5.elements.length-1; i++) {
+          var x = document.getElementById("mod5").elements[i].value;
+          y.push(x);
+          console.log(x);
+        }
+    document.getElementById('fname').innerHTML = y[0];
+    document.getElementById('lname').innerHTML = y[1];
+    document.getElementById('address').innerHTML = y[2];
+    document.getElementById('city').innerHTML = y[3];
+    document.getElementById('state').innerHTML = y[4];
+  }
+  document.getElementById('dis').addEventListener('click', inputDisplay);
+  document.getElementById('col').addEventListener('click', colorDisplay);
+  document.getElementById('inp').addEventListener('click', mod5CP);
+</script>
+</body>
+</html>
