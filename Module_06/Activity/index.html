@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Module 06 Activity</title>
+    <style media="screen">
+      body {  text-align: center;
+              font-family: Georgia, serif;
+              background-color: #F5F4F3;
+              color: #00085D  }
+    </style>
+  </head>
+  <body>
+    <h1>Performing Calculations</h1>
+    <p>Please enter the length and width of the area you'd like to calculate:</p><br>
+    <form name = "calc">
+      <input id="length" type="number" name="length" placeholder="Length" value="">
+      <input id="width" type="number" name="width" placeholder="Width" value="">
+      <input type="button" onclick="mod6Function()" value="Calculate">
+    </form>
+    <h3 id="mod6"></h3>
+    <script>
+      function mod6Function(){
+        var a = document.getElementById("length").value;
+        var b = document.getElementById("width").value;
+        var c = a * b;
+      //  return c;
+        document.getElementById("mod6").innerHTML = "The area of the space described by your input is " + c;
+      }
+    </script>
+  </body>
+</html>
